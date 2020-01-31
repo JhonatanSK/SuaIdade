@@ -11,18 +11,20 @@ function Result ({ navigation }) {
     return (
         <>
             <View style={Styles.container}>
-                <View style={Styles.info}>
-                    <Text style={Styles.infoPadrao}>olá {nome}, segue abaixo as informações sobre sua idade atual em dia, mês e ano</Text>
-                </View>
-                <View style={Styles.divs}>
-                    <Text style={Styles.texto}>Dia: {dia}</Text>
-                    <Text style={Styles.texto}>Mes: {mes}</Text>
-                    <Text style={Styles.texto}>Ano: {ano}</Text>
-                </View>
-                <View style={Styles.footer}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Main') }>
-                        <Text>Voltar</Text>
-                    </TouchableOpacity>
+                <View style={Styles.informacoes}>
+                    <View style={Styles.info}>
+                        <Text style={Styles.infoPadrao}>olá {nome}, segue abaixo as informações sobre sua idade atual em dia, mês e ano</Text>
+                    </View>
+                    <View style={Styles.divs}>
+                        <Text style={Styles.texto}>Dia:   {dia}</Text>
+                        <Text style={Styles.texto}>Mes:   {mes}</Text>
+                        <Text style={Styles.texto}>Ano:   {ano}</Text>
+                    </View>
+                    <View style={Styles.footer}>
+                        <TouchableOpacity style={Styles.button} onPress={() => navigation.navigate('Main') }>
+                            <Text>Voltar</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
         </>
@@ -30,32 +32,48 @@ function Result ({ navigation }) {
 }
 
 const Styles = StyleSheet.create({
-    divs: {
-        padding:20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 80
-    },
     container: {
         flex: 1,
         alignItems: 'center',
-        // justifyContent: 'center',
-        alignSelf: 'center',
-        backgroundColor: '#E3F2FD'
+        justifyContent: 'center',
+        backgroundColor: '#FFF',
+        padding:40
+    },    
+    divs: {
+        padding:20,
+        justifyContent: 'center',
+        // alignItems: 'center',
+        marginTop: 40,
+        marginLeft:65
+
     },
+
     info: {
         padding: 20
     },
     infoPadrao: {
-        fontSize:18,
-        fontWeight: 'bold'
+        fontSize:22,
+        color: '#827f7f'
     },
     texto: {
-        fontSize: 18
+        fontSize: 24,
+        marginBottom: 15
+    },
+    informacoes: {
+        height: 600
     },
     footer:{
-        fontSize:12
-    }
+        fontSize:12,
+        padding: 30
+    },
+    button: {
+        backgroundColor: '#4cff5e',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height:40,
+        borderRadius: 10,
+        marginTop: 80
+    },
 })
 
 export default Result;
